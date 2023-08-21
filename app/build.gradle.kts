@@ -5,14 +5,32 @@ plugins {
 
 android {
     namespace = "com.accidentalproductions.secretmessage"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.accidentalproductions.secretmessage"
         minSdk = 29
-        targetSdk = 33
-        versionCode = 1
-        versionName = "1.0"
+        //noinspection EditedTargetSdkVersion
+        targetSdk = 34
+        versionCode = 3
+        versionName = "1.2"
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        // Enable support library for vector drawables
+        vectorDrawables.useSupportLibrary = true
+    }
+
+
+    compileSdk = 34
+
+    defaultConfig {
+        applicationId = "com.accidentalproductions.secretmessage"
+        minSdk = 22
+        //noinspection EditedTargetSdkVersion
+        targetSdk = 34
+        versionCode = 2
+        versionName = "1.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -48,9 +66,9 @@ android {
 
 dependencies {
 
-    implementation("androidx.core:core-ktx:1.9.0")
+    implementation("androidx.core:core-ktx:1.10.1")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
-    implementation("androidx.activity:activity-compose:1.7.0")
+    implementation("androidx.activity:activity-compose:1.7.2")
     implementation(platform("androidx.compose:compose-bom:2023.03.00"))
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.ui:ui-graphics")
