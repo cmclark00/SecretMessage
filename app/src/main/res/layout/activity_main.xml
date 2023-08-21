@@ -6,8 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/lighterBlue"
-    tools:context=".MainActivity"
-    android:padding="16dp">
+    tools:context=".MainActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -30,26 +29,49 @@
             android:inputType="text"
             android:importantForAutofill="no" />
 
-        <Button
-            android:id="@+id/encryptButton"
+        <LinearLayout
+            android:id="@+id/buttonLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_below="@id/inputMessage"
-            android:text="@string/encryptButton"
-            android:layout_marginTop="16dp"
-            android:textColor="@color/colorAccent"
-            android:background="@color/paleBlue" />
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp">
+
+            <Button
+                android:id="@+id/encryptButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/inputMessage"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:text="@string/encryptButton"
+                android:textColor="@color/lighterBlue"
+                android:background="@drawable/rounded_button" />
+
+            <Button
+                android:id="@+id/shareButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/inputMessage"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:text="@string/shareButton"
+                android:textColor="@color/lighterBlue"
+                android:background="@drawable/rounded_button"
+                android:layout_marginStart="16dp" />
+
+        </LinearLayout>
+
 
         <!-- Encryption Section -->
         <TextView
             android:id="@+id/encryptedMessage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/encryptButton"
+            android:layout_below="@id/buttonLayout"
             android:layout_margin="16dp"
-            android:textColor="@color/paleBlue"
-            />
+            android:textColor="@color/paleBlue" />
 
         <TextView
             android:id="@+id/encryptionKey"
@@ -60,25 +82,21 @@
             android:textColor="@color/paleBlue"
             />
 
-        <Button
-            android:id="@+id/shareButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
+        <View
+            android:id="@+id/separator"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
             android:layout_below="@id/encryptionKey"
-            android:text="@string/shareButton"
-            android:layout_marginTop="16dp"
-            android:textColor="@color/colorAccent"
+            android:layout_marginTop="32dp"
             android:background="@color/paleBlue" />
 
-        <!-- Decryption Section -->
         <EditText
             android:id="@+id/encryptedMessageInput"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="@string/encryptedMessage"
             android:textColorHint="@color/paleBlue"
-            android:layout_below="@id/shareButton"
+            android:layout_below="@id/separator"
             android:layout_margin="16dp"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
@@ -112,7 +130,7 @@
             android:layout_below="@id/decryptionKeyInput"
             android:text="@string/decryptButton"
             android:layout_marginTop="16dp"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/lighterBlue"
             android:background="@color/paleBlue" />
 
 
