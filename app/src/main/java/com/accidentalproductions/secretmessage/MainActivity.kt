@@ -14,6 +14,8 @@ import javax.crypto.KeyGenerator
 import javax.crypto.SecretKey
 import javax.crypto.spec.IvParameterSpec
 import javax.crypto.spec.SecretKeySpec
+import android.widget.Toast
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -82,9 +84,25 @@ class MainActivity : AppCompatActivity() {
             val encryptedMessage = encryptedMessageInput.text.toString()
             val decryptionKey = decryptionKeyInput.text.toString()
 
-            val decryptedMessage = decrypt(encryptedMessage, decryptionKey)
-            decryptedMessageTextView.text = getString(R.string.decrypted_message_label, decryptedMessage)
+            if (encryptedMessage.isNotEmpty() && decryptionKey.isNotEmpty()) {
+                try {
+                    val decryptedMessage = decrypt(encryptedMessage, decryptionKey)
+                    decryptedMessageTextView.text = getString(R.string.decrypted_message_label, decryptedMessage)
+                } catch (e: NumberFormatException) {
+                    val errorMessage = "Invalid input format"
+                    decryptedMessageTextView.text = errorMessage
+                    // You can also display a Toast message to provide more context
+                    Toast.makeText(this, errorMessage, Toast.LENGTH_SHORT).show()
+                }
+            } else {
+                val errorMessage = "Encrypted message and decryption key are required"
+                decryptedMessageTextView.text = errorMessage
+                // You can also display a Toast message to provide more context
+                Toast.makeText(this, errorMessage, Toast.LENGTH_SHORT).show()
+            }
         }
+
+
     }
 
 
