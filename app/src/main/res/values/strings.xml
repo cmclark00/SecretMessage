@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">SecretMessage</string>
+    <string name="app_name_pale_blue"><font fgcolor="#B3E0F2">SecretMessage</font></string>
+    <string name="inputMessage">Enter your message: </string>
+    <string name="encryptedMessage">Enter encrypted message: </string>
+    <string name="decryptionKey">Enter decryption key: </string>
+    <string name="encryptButton">ENCRYPT</string>
+    <string name="shareButton">SHARE</string>
+    <string name="decryptButton">DECRYPT</string>
+    <string name="encrypted_message_label">Encrypted Message: %s</string>
+    <string name="encryption_key_label">Encryption Key: %s</string>
+    <string name="decrypted_message_label">Decrypted Message: %s</string>
+
+</resources>

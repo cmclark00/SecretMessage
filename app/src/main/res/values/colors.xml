@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        <color name="colorPrimary">#303F9F</color>       <!-- Dark Blue -->
+        <color name="colorPrimaryDark">#263238</color>  <!-- Dark Grey -->
+        <color name="colorAccent">#FF4081</color>       <!-- Pink Accent Color -->
+        <color name="paleBlue">#B3E0F2</color>
+        <color name="lighterBlue">#3E50B4</color>
+
+
+        <!-- Add more custom colors if needed -->
+</resources>
+
+
+
